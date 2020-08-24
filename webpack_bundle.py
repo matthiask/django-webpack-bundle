@@ -19,10 +19,10 @@ else:
     raise ImproperlyConfigured("Unable to determine the Webpack bundle path.")
 
 
-JS_INLINE = '<script type="text/javascript">{chunk}</script>'
-CSS_INLINE = '<style type="text/css">{chunk}</style>'
-JS_EXTERNAL = '<script type="text/javascript" src="{url}" {attrs}></script>'
-CSS_EXTERNAL = '<link type="text/css" rel="stylesheet" href="{url}" {attrs} />'
+JS_INLINE = '<script>{chunk}</script>'
+CSS_INLINE = '<style>{chunk}</style>'
+JS_EXTERNAL = '<script src="{url}"{attrs}></script>'
+CSS_EXTERNAL = '<link rel="stylesheet" href="{url}"{attrs}>'
 
 
 def webpack_bundle(
@@ -35,6 +35,9 @@ def webpack_bundle(
             "Unable to resolve webpack bundle %s in config %s" % (bundle_name, config)
         )
         return ""
+
+    if attrs:
+        attrs = " {}".format(attrs)
 
     tags = []
     for chunk in chunks:

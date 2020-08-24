@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from io import open
 import os
@@ -13,7 +13,7 @@ def read(filename):
 
 setup(
     name="django-webpack-bundle",
-    version="1.0.1",
+    version="1.1.0",
     description="",
     long_description=read("README.rst"),
     author="Matthias Kestenholz",

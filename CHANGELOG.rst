@@ -5,6 +5,12 @@ Change log
 `Next version`_
 ~~~~~~~~~~~~~~~
 
+`1.1`_ (2020-08-24)
+~~~~~~~~~~~~~~~~~~~
+
+- Dropped the unnecessary ``type="text/css"`` and
+  ``type="text/javascript"`` attributes from generated tags.
+
 
 `1.0`_ (2019-06-15)
 ~~~~~~~~~~~~~~~~~~~
